@@ -20,3 +20,23 @@ jobs:
           echo "${{ steps.yamler.outputs.yaml }}"
           echo "${{ steps.yamler.outputs.what_it_is }}"
           echo "${{ steps.yamler.outputs.yaml_resources__yaml_1_2_3rd_edition }}"
+
+  test_job-secrets:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: yamler
+        uses: ./
+        id: yamler
+        with:
+          yaml-file: "__tests__/test.yaml"
+          add-mark: true
+
+      # Use the output from the yamler step
+      - name: Output Test
+        run: |
+          echo "${{ steps.yamler.outputs.yaml }}"
+          echo "${{ steps.yamler.outputs.what_it_is }}"
+          echo "${{ steps.yamler.outputs.yaml_resources__yaml_1_2_3rd_edition }}"
