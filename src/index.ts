@@ -95,6 +95,8 @@ function handleString(key: string, value: string): boolean {
     console.log(`***** Output Variables *****`);
     traverseObject(yamlParse);
   } catch (error) {
-    core.setFailed(`This just happened: ${error.message}`);
+    // https://www.typescriptlang.org/tsconfig#useUnknownInCatchVariables
+    if (error instanceof Error)
+      core.setFailed(`This just happened: ${error.message}`);
   }
 })();

@@ -2,16 +2,17 @@
   "name": "yamler",
   "version": "1.0.0",
   "description": "YAML Processor GitHub Action",
-  "main": "build/main.js",
+  "main": "build/index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && npm run pack",
     "dev": "tsc -w",
     "test": "jest --coverage",
     "coverage": "codecov",
     "test:ga": "act -j CI",
     "format": "prettier --write **/*.ts",
     "format-check": "prettier --check **/*.ts",
-    "clean": "rm -rf build node_modules"
+    "clean": "rm -rf build node_modules",
+    "pack": "ncc build --out dist"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,7 @@
   "homepage": "https://github.com/juliojimenez/yamler#readme",
   "devDependencies": {
     "@types/jest": "^26.0.23",
+    "@vercel/ncc": "^0.33.3",
     "codecov": "^3.8.3",
     "jest": "^26.6.3",
     "jest-circus": "^26.6.3",
