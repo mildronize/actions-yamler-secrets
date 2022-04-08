@@ -94,6 +94,11 @@ function traverseArray(theArray) {
 }
 exports.traverseArray = traverseArray;
 function handleString(key, value) {
+    const addMark = core.getInput("add-mark");
+    console.log(`addMark: ${addMark}`);
+    if (addMark == 'true') {
+        console.log(`::add-mask::${value}`);
+    }
     core.setOutput(key, value);
     return true;
 }

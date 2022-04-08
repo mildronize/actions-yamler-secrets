@@ -83,6 +83,11 @@ export function traverseArray(theArray: Array<any>): boolean {
 }
 
 function handleString(key: string, value: string): boolean {
+  const addMark = core.getInput("add-mark");
+  console.log(`addMark: ${addMark}`);
+  if(addMark == 'true'){
+    console.log(`::add-mask::${value}`);
+  }
   core.setOutput(key, value);
   return true;
 }

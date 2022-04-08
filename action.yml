@@ -4,6 +4,11 @@ inputs:
   yaml-file:
     description: "Input file"
     required: true
+  add-mark:
+    description: "Option to hide the value"
+    required: false
+    default: 'false'
+
 runs:
   using: "node12"
   main: "dist/index.js"
