@@ -1,5 +1,5 @@
 {
-  "name": "yamler",
+  "name": "actions-yamler-secrets",
   "version": "1.0.0",
   "description": "YAML Processor GitHub Action",
   "main": "build/index.js",

@@ -1,15 +1,16 @@
-# yamler
+# Actions-yamler-secrets
 
-**yamler** is a GitHub Action that processes an entire YAML document and makes all elements available to you as GitHub Workflow output variables.
+**yamler** is a GitHub Action that processes an entire YAML document and makes all elements available to you as GitHub Workflow output variables, the output will be marked as sensitve value.
 
 ## Usage
 
 ```
 - name: yamler
-  uses: juliojimenez/yamler@v0
+  uses: mildronize/actions-yamler-secrets@v1
   id: yamler
   with:
     yaml-file: "example.yaml"
+    add-mark: true
 ```
 
 ## Output
